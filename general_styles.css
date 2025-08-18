@@ -5,5 +5,9 @@ body, p, h1, h2, h3, h4, h5, h6, a, span, li {
 }
 body{
     background-color:black;
+    background-image: url('background-grid.svg');
+    background-repeat: repeat;
+    background-position: top left;
+    background-attachment: fixed;
 }
 
