@@ -16,11 +16,13 @@ body{
   display:flex;
   justify-content: center;
   align-items: center;
+  height:60px;
 }
 .nav-bar .nav-links{display:flex;
 }
 .nav-bar *{list-style-type: none;}
 .dropdown .dropdown-content{display:none;}
 .dropdown:hover .dropdown-content{display:block;}
+.nav-bar a{text-decoration:none;}
 .nav-bar a img{height:20px;}
-.nav-bar .nav-links li{margin:12px;font-size:1.2em;text-decoration:none;}
+.nav-bar .nav-links li{margin:12px;font-size:1.2em;}
