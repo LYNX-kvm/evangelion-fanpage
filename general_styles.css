@@ -22,4 +22,4 @@ body{
 }
 .dropdown .dropdown-content{display:none;}
 .dropdown:hover .dropdown-content{display:block;}
-.nav-bar a img{height:200px;}
+.nav-bar a img{height:50px;}
