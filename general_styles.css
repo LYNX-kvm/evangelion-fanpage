@@ -11,8 +11,10 @@ body{
 }
 
 /* Header */
-.header-container{
+.nav-bar{
   display:flex;
   justify-content: center;
   align-items: center;
+  list-style-type: none;
 }
+.nav-bar .dropdown-content
