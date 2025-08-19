@@ -17,4 +17,7 @@ body{
   align-items: center;
   list-style-type: none;
 }
-.nav-bar .dropdown-content
+.nav-bar .nav-links{display:flex;
+}
+.dropdown .dropdown-content{display:none;}
+.dropdown:hover .dropdown-content{display:block;}
