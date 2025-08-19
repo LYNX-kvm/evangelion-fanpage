@@ -57,6 +57,8 @@ main {
   display: flex;
   align-items: center;
   gap: 20px; /* Space between links */
+}
+li{
   list-style-type: none;
 }
 
