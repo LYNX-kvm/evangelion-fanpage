@@ -151,9 +151,14 @@ li{
 }
 
 main{
+  display: flex;
+  flex-direction: column;
   padding: 40px;
   flex: 1;
   padding-top: 80px; /* adjust to match header height */
+}
+.welcome{
+  flex: 1;
 }
 main *{margin-bottom: 1em}
 main h1{
