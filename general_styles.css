@@ -20,11 +20,6 @@ html, body {
   min-height: 100vh;
 }
 
-main {
-  flex: 1;
-  padding-top: 80px; /* adjust to match header height */
-}
-
 
 body, p, h1, h2, h3, h4, h5, h6, a, span, li {
   color: white;
@@ -155,4 +150,6 @@ li{
 
 main{
   padding: 40px;
+  flex: 1;
+  padding-top: 80px; /* adjust to match header height */
 }
