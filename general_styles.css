@@ -155,7 +155,7 @@ main{
   flex: 1;
   padding-top: 80px; /* adjust to match header height */
 }
-main > *{margin-bottom: 1em}
+main *{margin-bottom: 1em}
 main h1{
   font-size: 5em;
 }
