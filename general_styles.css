@@ -24,6 +24,7 @@ html, body {
 body, p, h1, h2, h3, h4, h5, h6, a, span, li {
   color: white;
   font-family: 'Orbitron', sans-serif;
+  line-height: 1.6
 }
 
 /* Body Styling */
@@ -158,5 +159,12 @@ main{
 main *{margin-bottom: 1em}
 main h1{
   font-size: 5em;
+}
+main h2{
+  font-size: 3em;
+}
+main p{
+  font-size: 1.2em;
+
 }
 
