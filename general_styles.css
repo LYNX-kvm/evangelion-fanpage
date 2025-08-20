@@ -8,6 +8,24 @@ html, body {
   height: 100%;
 }
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-top: 80px; /* adjust to match header height */
+}
+
+
 body, p, h1, h2, h3, h4, h5, h6, a, span, li {
   color: white;
   font-family: 'Orbitron', sans-serif;
@@ -33,9 +51,6 @@ position: fixed;
   background-color: black;
   padding: 10px 0;
   border-bottom: 1px solid #333;
-}
-main {
-  padding-top: 80px; /* adjust to match header height */
 }
 
 /* Navigation Bar */
