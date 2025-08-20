@@ -136,7 +136,9 @@ li{
   font-size: 0.9em;
   background-color: black;
   border-top: 1px solid #333;
-
+}
+.footer-container p{
+  margin-bottom: 16px;
 }
 
 .footer-links {
