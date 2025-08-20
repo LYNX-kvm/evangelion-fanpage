@@ -134,12 +134,14 @@ li{
 }
 
 /* Footer (optional styling) */
-footer {
+.footer-container {
   color: white;
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
   background-color: black;
+  border-top: 1px solid #333;
+
 }
 
 .footer-links {
@@ -149,4 +151,8 @@ footer {
 .footer-links a img {
   height: 24px;
   margin: 0 8px;
+}
+
+main{
+  padding: 40px;
 }
