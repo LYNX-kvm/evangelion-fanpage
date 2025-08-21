@@ -1,4 +1,4 @@
-/* Reset */
+/* -------------------- RESET -------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   margin: 0;
 }
 
-/* Typography */
+/* -------------------- TYPOGRAPHY -------------------- */
 body, p, h1, h2, h3, h4, h5, h6, a, span, li {
   color: white;
   font-family: 'Orbitron', sans-serif;
@@ -18,7 +18,7 @@ li {
   list-style-type: none;
 }
 
-/* Body Styling */
+/* -------------------- BODY STYLING -------------------- */
 body {
   background-color: black;
   background-image: url('media/background-grid.svg');
@@ -27,14 +27,14 @@ body {
   background-attachment: fixed;
 }
 
-/* Layout Wrapper */
+/* -------------------- LAYOUT -------------------- */
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Header */
+/* -------------------- HEADER -------------------- */
 .header-container {
   position: fixed;
   top: 0;
@@ -46,16 +46,19 @@ body {
   border-bottom: 1px solid #333;
 }
 
-/* Navigation */
+/* -------------------- NAVIGATION -------------------- */
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2.5rem;
-  position: relative;
-  flex-wrap: wrap; /* Add this line */
-
+  flex-wrap: wrap;
 }
+
+.logo-link img {
+  height: 1.25rem;
+}
+
 .nav-bar a {
   text-decoration: none;
   color: white;
@@ -66,11 +69,8 @@ body {
   background-color: #222;
   border-radius: 0.25rem;
 }
-.nav-bar a img {
-  height: 1.25rem;
-}
 
-/* Nav Links */
+/* -------------------- NAV LINKS -------------------- */
 .nav-links {
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* Dropdown */
+/* -------------------- DROPDOWN -------------------- */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -112,12 +112,12 @@ body {
   border-radius: 4px;
 }
 
-/* Main Content */
+/* -------------------- MAIN -------------------- */
 main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 5rem 2.5rem 2.5rem; /* top padding adjusted for header */
+  padding: 5rem 2.5rem 2.5rem;
 }
 main * {
   margin-bottom: 1rem;
@@ -139,7 +139,7 @@ main p {
   margin-bottom: 2rem;
 }
 
-/* Footer */
+/* -------------------- FOOTER -------------------- */
 .footer-container {
   color: white;
   text-align: center;
@@ -159,7 +159,7 @@ main p {
   margin: 0 0.5rem;
 }
 
-/* phone */
+/* -------------------- HAMBURGER BUTTON -------------------- */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -169,11 +169,12 @@ main p {
   cursor: pointer;
 }
 
-.menu-toggle-wrapper{
-  display:flex;
-  justify-content: center;
-}
+/* -------------------- RESPONSIVE (PHONES & SMALL TABLETS) -------------------- */
 @media (max-width: 768px) {
+  main {
+    padding: 8rem 1rem 1rem;
+  }
+
   main h1 {
     font-size: 8vw;
   }
@@ -184,26 +185,25 @@ main p {
     font-size: 3.5vw;
   }
 
+  /* Show hamburger menu */
   .menu-toggle {
     display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
     z-index: 1001;
-  margin-left: auto;
-  margin-right: auto;
   }
 
-  main {
-    padding: 8rem 1rem 1rem;
+  /* Stack nav layout vertically */
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav-links {
     flex-direction: column;
     width: 100%;
     display: none;
+    margin-top: 1rem;
   }
 
   .nav-links.show {
@@ -212,23 +212,21 @@ main p {
 
   .nav-links li {
     width: 100%;
-    text-align: center;
+    text-align: left;
+    padding: 0.5rem 1rem;
   }
 
   .dropdown-content {
     position: static;
     box-shadow: none;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: none;
-  }
-
-  .dropdown-content {
     display: none;
   }
 
   .dropdown.open .dropdown-content {
     display: block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* disable hover on mobile */
   }
 }
