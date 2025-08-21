@@ -169,6 +169,10 @@ main p {
   cursor: pointer;
 }
 
+.menu-toggle-wrapper{
+  display:flex;
+  justify-content: center;
+}
 @media (max-width: 768px) {
   main h1 {
     font-size: 8vw;
