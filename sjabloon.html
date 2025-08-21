@@ -16,6 +16,11 @@
     <header class="header-container">
         <nav class="nav-bar">
             <a href="https://evangelion.fandom.com/wiki/Main_Page" target="_blank"><img src="media/Evangelion-logo.png" alt="Evangelion Logo"></a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+
             <ul class="nav-links">
                 <li>
                     <a href="index.html">Home</a>
@@ -78,5 +83,23 @@
         </div>
     </footer>
     </div>
+
+    <script>
+  const toggleButton = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Optional: Toggle dropdowns on click for mobile
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  });
+</script>
+
 </body>
 </html>

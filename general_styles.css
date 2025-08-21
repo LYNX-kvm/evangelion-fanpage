@@ -157,14 +157,53 @@ main p {
   margin: 0 0.5em;
 }
 /* phone */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
-  .nav-bar {
-    flex-direction: column;
-    padding: 0 20px;
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 10px;
   }
-  main{padding-top:6em}
-  main h1 {
-    font-size: 3em;
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
   }
 }
+
 
