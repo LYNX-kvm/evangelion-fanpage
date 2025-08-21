@@ -42,7 +42,7 @@ body {
   width: 100%;
   z-index: 999;
   background-color: black;
-  padding: 0.625em 0;
+  padding: 0.625rem 0;
   border-bottom: 1px solid #333;
 }
 
@@ -51,43 +51,43 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.5em;
+  padding: 0 2.5rem;
   position: relative;
 }
 .nav-bar a {
   text-decoration: none;
   color: white;
-  padding: 0.5em 0.75em;
+  padding: 0.5rem 0.75rem;
   transition: background-color 0.2s;
 }
 .nav-bar a:hover {
   background-color: #222;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
 }
 .nav-bar a img {
-  height: 1.25em;
+  height: 1.25rem;
 }
 
 /* Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.25em;
+  gap: 1.25rem;
 }
 .nav-links li {
   position: relative;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 /* Dropdown */
 .dropdown-content {
   display: none;
   position: absolute;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   top: 100%;
   left: 0;
   background-color: black;
-  min-width: 10em;
+  min-width: 10rem;
   z-index: 1000;
   padding: 10px 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -115,51 +115,52 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 5em 2.5em 2.5em; /* top padding adjusted for header */
+  padding: 5rem 2.5rem 2.5rem; /* top padding adjusted for header */
 }
 main * {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 main h1 {
-  font-size: 5em;
+  font-size: 5rem;
 }
 main h2 {
-  font-size: 3em;
+  font-size: 3rem;
 }
 main p {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   line-height: 1.6;
 }
 .welcome {
   flex: 1;
 }
 .update {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 /* Footer */
 .footer-container {
   color: white;
   text-align: center;
-  padding: 1.25em;
-  font-size: 0.9em;
+  padding: 1.25rem;
+  font-size: 0.9rem;
   background-color: black;
   border-top: 1px solid #333;
 }
 .footer-container p {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 .footer-links {
   margin-top: 10px;
 }
 .footer-links a img {
-  height: 1.5em;
-  margin: 0 0.5em;
+  height: 1.5rem;
+  margin: 0 0.5rem;
 }
+
 /* phone */
 .menu-toggle {
   display: none;
-  font-size: 2em;
+  font-size: 2rem;
   background: none;
   border: none;
   color: white;
@@ -167,27 +168,28 @@ main p {
 }
 
 @media (max-width: 768px) {
-  main h1{
+  main h1 {
     font-size: 8vw;
   }
-    main h2{
+  main h2 {
     font-size: 6vw;
   }
-  main p{
+  main p {
     font-size: 3.5vw;
   }
- .menu-toggle {
-  display: block;
-  font-size: 2em;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
 
-main{
-  padding: 5em 1em 1em
-}
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  main {
+    padding: 5rem 1rem 1rem;
+  }
 
   .nav-links {
     flex-direction: column;
@@ -221,5 +223,3 @@ main{
     display: block;
   }
 }
-
-
