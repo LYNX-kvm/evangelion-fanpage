@@ -167,11 +167,21 @@ main p {
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    align-self: flex-end;
-    margin-bottom: 10px;
+  main h1{
+    font-size: 3.6em
   }
+    main h2{
+    font-size: 2.4em
+  }
+ .menu-toggle {
+  display: none;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 
   .nav-links {
     flex-direction: column;
