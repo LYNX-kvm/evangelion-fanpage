@@ -95,32 +95,31 @@
 
   // Handle dropdown toggle
   dropdowns.forEach(dropdown => {
-    // Toggle open/close when clicking the parent li itself
-    dropdown.addEventListener('click', (e) => {
-      // Only toggle if user clicked the parent (not a submenu link)
-      if (e.target.closest('.dropdown-content')) return;
+    const parent = dropdown.firstElementChild; // usually the label or <a>
+
+    parent.addEventListener('click', (e) => {
+      e.preventDefault(); // stop jumping if it's "#"
       dropdown.classList.toggle('open');
     });
 
-    // Prevent submenu links from closing/re-toggling the parent
+    // Close menu when submenu link is clicked
     const subLinks = dropdown.querySelectorAll('.dropdown-content a');
     subLinks.forEach(subLink => {
-      subLink.addEventListener('click', (e) => {
-        e.stopPropagation();
-        // If you also want the whole menu to close after picking a link on mobile:
+      subLink.addEventListener('click', () => {
         navLinks.classList.remove('show');
         dropdowns.forEach(d => d.classList.remove('open'));
       });
     });
   });
 
-  // Close dropdowns when clicking outside
+  // Close dropdowns if clicking outside the nav
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-bar')) {
       dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
     }
   });
 </script>
+
 
 
 </body>
