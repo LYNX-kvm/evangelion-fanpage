@@ -96,22 +96,45 @@
     </footer>
     </div>
 
-    <script>
+<script>
   const toggleButton = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
+  const dropdowns = document.querySelectorAll('.dropdown');
 
+  // Toggle the whole nav menu (hamburger)
   toggleButton.addEventListener('click', () => {
     navLinks.classList.toggle('show');
   });
 
-  // Optional: Toggle dropdowns on click for mobile
-  const dropdowns = document.querySelectorAll('.dropdown');
+  // Handle dropdown toggle
   dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', () => {
+    // Toggle open/close when clicking the parent li itself
+    dropdown.addEventListener('click', (e) => {
+      // Only toggle if user clicked the parent (not a submenu link)
+      if (e.target.closest('.dropdown-content')) return;
       dropdown.classList.toggle('open');
     });
+
+    // Prevent submenu links from closing/re-toggling the parent
+    const subLinks = dropdown.querySelectorAll('.dropdown-content a');
+    subLinks.forEach(subLink => {
+      subLink.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // If you also want the whole menu to close after picking a link on mobile:
+        navLinks.classList.remove('show');
+        dropdowns.forEach(d => d.classList.remove('open'));
+      });
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-bar')) {
+      dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+    }
   });
 </script>
+
 
 </body>
 </html>
