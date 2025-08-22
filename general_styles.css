@@ -213,7 +213,7 @@ main p {
     font-size: 6vw;
   }
   main h3 {
-    font-size: 4.6vh;
+    font-size: 4.6vw;
   }
   main p {
     font-size: 3.5vw;
@@ -249,18 +249,15 @@ main p {
   }
 
   .dropdown-content {
-    display: block;
-    /* position: static;
-    background: none;
+    position: static;
     box-shadow: none;
-    opacity: 1;
-    transform: none;
-    padding: 0; */
+    display: none;
   }
 
-  .dropdown-content li {
-    padding-left: 1rem; /* indent to show hierarchy */
+  .dropdown.open .dropdown-content {
+    display: block;
   }
+
 }
 
 /* -------------------- KEYBOARD NAVIGATION -------------------- */
