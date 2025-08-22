@@ -195,13 +195,6 @@ html {
     text-align: left;
     padding-left: 1rem;
   }
-    .dropdown button{
-    border: none;
-    font-family: var(--primary-font);
-    background-color: var(--main-bg);
-    color: var(--text-color);
-    font-size: 3.5vw;
-  }
 
   main {
     padding: 8rem 1rem 1rem;
@@ -224,7 +217,6 @@ html {
     max-height: 80vh;    /* don't exceed screen */
     overflow-y: auto;    /* enable scrolling */
   }
-
 }
 
 /* -------------------- MAIN -------------------- */
