@@ -232,16 +232,16 @@ html {
   }
 
   main h1 {
-    font-size: 4vw;
+    font-size: 8vw;
   }
   main h2 {
-    font-size: 3vw;
+    font-size: 6vw;
   }
   main h3 {
-    font-size: 2.4vw;
+    font-size: 4vw;
   }
   main p {
-    font-size: 1.6vw;
+    font-size: 3vw;
   }
 
   .nav-links.show {
