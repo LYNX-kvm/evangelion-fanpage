@@ -21,7 +21,7 @@ html, body {
 }
 
 /* -------------------- TYPOGRAPHY -------------------- */
-body, p, h1, h2, h3, h4, h5, h6, a, span, li {
+body, p, h1, h2, h3, h4, h5, h6, a, span, li, button {
   color: var(--text-color);
   font-family: var(--primary-font);
 }
@@ -98,36 +98,33 @@ html {
 }
 
 /* -------------------- DROPDOWN -------------------- */
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-family: var(--primary-font);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Dropdown content */
 .dropdown-content {
   display: none;
   position: absolute;
-  font-size: 0.8rem;
   top: 100%;
   left: 0;
-  background-color: var(--main-bg);
   min-width: 10rem;
+  background-color: var(--main-bg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   z-index: 1000;
-  padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.dropdown:hover .dropdown-content,
-.dropdown.open .dropdown-content {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown-content li {
-  padding: 8px 16px;
-  white-space: nowrap;
 }
 .dropdown-content li a {
   display: block;
+  padding: 8px 16px;
   color: var(--text-color);
   text-decoration: none;
   transition: background-color 0.2s;
@@ -135,6 +132,91 @@ html {
 .dropdown-content li a:hover {
   background-color: var(--border-color);
   border-radius: 4px;
+}
+
+/* Desktop hover */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+/* -------------------- HAMBURGER BUTTON -------------------- */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* -------------------- RESPONSIVE (PHONES & SMALL TABLETS) -------------------- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1001;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  main {
+    padding: 8rem 1rem 1rem;
+  }
+
+  main h1 {
+    font-size: 8vw;
+  }
+  main h2 {
+    font-size: 6vw;
+  }
+  main h3 {
+    font-size: 4.6vw;
+  }
+  main p {
+    font-size: 3.5vw;
+  }
+
+  .nav-links.show {
+    max-height: 80vh;    /* don't exceed screen */
+    overflow-y: auto;    /* enable scrolling */
+  }
 }
 
 /* -------------------- MAIN -------------------- */
@@ -188,84 +270,6 @@ main p {
 .footer-links a img {
   height: 1.5rem;
   margin: 0 0.5rem;
-}
-
-/* -------------------- HAMBURGER BUTTON -------------------- */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-/* -------------------- RESPONSIVE (PHONES & SMALL TABLETS) -------------------- */
-@media (max-width: 768px) {
-  main {
-    padding: 8rem 1rem 1rem;
-  }
-
-  main h1 {
-    font-size: 8vw;
-  }
-  main h2 {
-    font-size: 6vw;
-  }
-  main h3 {
-    font-size: 4.6vw;
-  }
-  main p {
-    font-size: 3.5vw;
-  }
-
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1001;
-  }
-
-  .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    margin-top: 1rem;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: left;
-    padding: 0.5rem 1rem;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    display: none;
-  }
-
-  .dropdown.open .dropdown-content {
-    display: block;
-  }
-  .nav-links.show {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-height: 80vh;    /* don't exceed screen */
-  overflow-y: auto;    /* enable scrolling */
-  margin-top: 1rem;
-  }
-
 }
 
 /* -------------------- KEYBOARD NAVIGATION -------------------- */

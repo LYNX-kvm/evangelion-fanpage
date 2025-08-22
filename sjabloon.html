@@ -15,55 +15,60 @@
 <body>
     <div class="wrapper">
     <header class="header-container">
-  <nav class="nav-bar">
-    <!-- Logo -->
-    <a href="https://evangelion.fandom.com/wiki/Main_Page" target="_blank" class="logo-link">
-      <img src="media/Evangelion-logo.png" alt="Evangelion Logo">
-    </a>
+<nav class="nav-bar">
+  <!-- Logo -->
+  <a href="https://evangelion.fandom.com/wiki/Main_Page" target="_blank" class="logo-link">
+    <img src="media/Evangelion-logo.png" alt="Evangelion Logo">
+  </a>
 
-    <!-- Hamburger button -->
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  <!-- Hamburger button -->
+  <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
 
-    <!-- Navigation links -->
-    <!-- Navigation links -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        Characters
-        <ul class="dropdown-content">
-          <li><a href="character-1.html">Shinji Ikari</a></li>
-          <li><a href="character-2.html">Character 2</a></li>
-          <li><a href="character-3.html">Character 3</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        Eva-Units
-        <ul class="dropdown-content">
-          <li><a href="eva-unit-1.html">Unit 1</a></li>
-          <li><a href="eva-unit-2.html">Unit 2</a></li>
-          <li><a href="eva-unit-3.html">Unit 3</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        Angels
-        <ul class="dropdown-content">
-          <li><a href="angel-1.html">angel 1</a></li>
-          <li><a href="angel-2.html">angel 2</a></li>
-          <li><a href="angel-3.html">angel 3</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        Media
-        <ul class="dropdown-content">
-          <li><a href="series.html">series</a></li>
-          <li><a href="movie-1.html">movie1</a></li>
-          <li><a href="movie-2.html">movie 2</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a href="contact_page.html">Contact</a></li>
-      <li class="dropdown"><a href="update-log.html">Update log</a></li>
-    </ul>
-  </nav>
+  <!-- Navigation links -->
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <button type="button" class="dropdown-toggle">Characters</button>
+      <ul class="dropdown-content">
+        <li><a href="character-1.html">Shinji Ikari</a></li>
+        <li><a href="character-2.html">Character 2</a></li>
+        <li><a href="character-3.html">Character 3</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <button type="button" class="dropdown-toggle">Eva-Units</button>
+      <ul class="dropdown-content">
+        <li><a href="eva-unit-1.html">Unit 1</a></li>
+        <li><a href="eva-unit-2.html">Unit 2</a></li>
+        <li><a href="eva-unit-3.html">Unit 3</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <button type="button" class="dropdown-toggle">Angels</button>
+      <ul class="dropdown-content">
+        <li><a href="angel-1.html">Angel 1</a></li>
+        <li><a href="angel-2.html">Angel 2</a></li>
+        <li><a href="angel-3.html">Angel 3</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <button type="button" class="dropdown-toggle">Media</button>
+      <ul class="dropdown-content">
+        <li><a href="series.html">Series</a></li>
+        <li><a href="movie-1.html">Movie 1</a></li>
+        <li><a href="movie-2.html">Movie 2</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact_page.html">Contact</a></li>
+    <li><a href="update-log.html">Update log</a></li>
+  </ul>
+</nav>
+
 </header>
     <main>
 
@@ -84,48 +89,56 @@
     </div>
 
 <script>
-  const toggleButton = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const dropdowns = document.querySelectorAll('.dropdown');
+// Select elements
+const toggleButton = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const dropdowns = document.querySelectorAll('.dropdown');
 
-  // Toggle the whole nav menu (hamburger)
-  toggleButton.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+// -------------------- Hamburger toggle --------------------
+toggleButton.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+// -------------------- Dropdown toggle (mobile) --------------------
+dropdowns.forEach(dropdown => {
+  const button = dropdown.querySelector('.dropdown-toggle');
+  if (!button) return; // skip if no toggle button
+
+  button.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent document click from closing it
+    dropdown.classList.toggle('open');
+
+    // Optional: close other dropdowns when opening this one
+    dropdowns.forEach(d => {
+      if (d !== dropdown) d.classList.remove('open');
+    });
   });
 
-  // Handle dropdown toggle
-  dropdowns.forEach(dropdown => {
-    const parent = dropdown.firstElementChild; // usually the label or <a>
-
-    parent.addEventListener('click', (e) => {
-      e.preventDefault(); // stop jumping if it's "#"
-      const isOpen = dropdown.classList.contains('open');
-
-      // Close all dropdowns first
+  // Close menu when a dropdown link is clicked
+  const subLinks = dropdown.querySelectorAll('.dropdown-content a');
+  subLinks.forEach(subLink => {
+    subLink.addEventListener('click', () => {
+      navLinks.classList.remove('show');
       dropdowns.forEach(d => d.classList.remove('open'));
-
-      // Then toggle this one if it was previously closed
-      if (!isOpen) {
-        dropdown.classList.add('open');
-      }
-    });
-
-    // Close menu when submenu link is clicked
-    const subLinks = dropdown.querySelectorAll('.dropdown-content a');
-    subLinks.forEach(subLink => {
-      subLink.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-        dropdowns.forEach(d => d.classList.remove('open'));
-      });
     });
   });
+});
 
-  // Close dropdowns if clicking outside the nav
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-bar')) {
-      dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
-    }
-  });
+// -------------------- Close dropdowns when clicking outside --------------------
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav-bar')) {
+    dropdowns.forEach(d => d.classList.remove('open'));
+  }
+});
+
+// -------------------- Optional: close nav menu when resizing to desktop --------------------
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    navLinks.classList.remove('show');
+    dropdowns.forEach(d => d.classList.remove('open'));
+  }
+});
+
 </script>
 
 
