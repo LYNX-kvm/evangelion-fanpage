@@ -258,9 +258,6 @@ main p {
     display: block;
   }
 
-  .dropdown:hover .dropdown-content {
-    display: none; /* disable hover on mobile */
-  }
 }
 
 /* -------------------- KEYBOARD NAVIGATION -------------------- */
