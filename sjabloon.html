@@ -99,7 +99,14 @@
 
     parent.addEventListener('click', (e) => {
       e.preventDefault(); // stop jumping if it's "#"
+      
+      // Toggle only the clicked dropdown
       dropdown.classList.toggle('open');
+
+      // Close all other dropdowns
+      dropdowns.forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
     });
 
     // Close menu when submenu link is clicked
@@ -119,6 +126,7 @@
     }
   });
 </script>
+
 
 
 
