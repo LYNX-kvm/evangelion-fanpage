@@ -48,6 +48,7 @@ body {
 /* -------------------- HEADER -------------------- */
 html {
   scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
 }
 
 .header-container {
@@ -159,11 +160,14 @@ main p {
   font-size: 1.2rem;
   line-height: 1.6;
 }
-.welcome {
+.welcome-section {
   flex: 1;
 }
 .update {
   margin-bottom: 2rem;
+}
+.update-log-index {
+  margin-top: auto; /* pushes it to the bottom of main */
 }
 
 /* -------------------- FOOTER -------------------- */
@@ -209,7 +213,7 @@ main p {
     font-size: 6vw;
   }
   main h3 {
-    font-size: 4.6vh;
+    font-size: 4.6vw;
   }
   main p {
     font-size: 3.5vw;
