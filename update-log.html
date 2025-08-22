@@ -112,14 +112,15 @@
 
     parent.addEventListener('click', (e) => {
       e.preventDefault(); // stop jumping if it's "#"
-      
-      // Toggle only the clicked dropdown
-      dropdown.classList.toggle('open');
+      const isOpen = dropdown.classList.contains('open');
 
-      // Close all other dropdowns
-      dropdowns.forEach(d => {
-        if (d !== dropdown) d.classList.remove('open');
-      });
+      // Close all dropdowns first
+      dropdowns.forEach(d => d.classList.remove('open'));
+
+      // Then toggle this one if it was previously closed
+      if (!isOpen) {
+        dropdown.classList.add('open');
+      }
     });
 
     // Close menu when submenu link is clicked
@@ -139,6 +140,7 @@
     }
   });
 </script>
+
 
 
 
